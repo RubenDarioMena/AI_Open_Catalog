@@ -1,0 +1,704 @@
+const modelsData = [
+    {
+        "name": "Hi3DGen",
+        "description": "Generates high-fidelity 3D geometry and models from a single image. It estimates normal maps to create detailed 3D shapes, including the back of objects not visible in the reference.",
+        "category": "3D Model Generator",
+        "subcategory": "Image to 3D",
+        "link": "https://www.google.com/search?q=https://github.com/Ye-Yuze/Hi3DGen",
+        "date": "2025-04-06\\",
+        "linkText": "Hi3DGen GitHub"
+    },
+    {
+        "name": "HSMR (Human Skeleton Mesh Recovery)",
+        "description": "Reconstructs a 3D model of a human body including the skeleton from a single image or video. Estimates pose and shape accurately, allowing for motion capture and multi-view rendering.",
+        "category": "3D Tool / Computer Vision",
+        "subcategory": "Pose Estimation / Motion Capture",
+        "link": "https://isshikihugh.github.io/HSMR/",
+        "date": "2025-04-06\\",
+        "linkText": "HSMR Project Page"
+    },
+    {
+        "name": "Anime Gamer",
+        "description": "Generates an endless interactive anime game environment from text prompts. It predicts the next game state and video frames based on user actions (e.g., \"sit\", \"run\").",
+        "category": "Video Generator / Game",
+        "subcategory": "Interactive Video Generation",
+        "link": "https://github.com/TencentARC/AnimeGamer",
+        "date": "2025-04-06\\",
+        "linkText": "Anime Gamer GitHub"
+    },
+    {
+        "name": "SkyReels A2",
+        "description": "Creates videos by combining multiple reference images (characters, objects, backgrounds). It maintains consistency of elements across the generated video.",
+        "category": "Video Generator",
+        "subcategory": "Image-to-Video / Composition",
+        "link": "https://github.com/SkyworkAI/SkyReels-A2",
+        "date": "2025-04-06\\",
+        "linkText": "SkyReels A2 GitHub"
+    },
+    {
+        "name": "EasyControl",
+        "description": "An image generation control framework (similar to ControlNet) that allows combining multiple conditions like edge maps, depth maps, and pose skeletons to guide generation.",
+        "category": "Image Generator",
+        "subcategory": "Control / Conditioning",
+        "link": "https://github.com/Xiaojiu-z/EasyControl",
+        "date": "2025-04-06\\",
+        "linkText": "EasyControl GitHub"
+    },
+    {
+        "name": "Lumina-mGPT 2.0",
+        "description": "An autoregressive image generation model (like GPT-4o's image generator) capable of text-to-image, subject-driven generation, and micro-editing images via prompts.",
+        "category": "Image Generator",
+        "subcategory": "Autoregressive / Image Editing",
+        "link": "https://github.com/Alpha-VLLM/Lumina-mGPT",
+        "date": "2025-04-06\\",
+        "linkText": "Lumina-mGPT GitHub"
+    },
+    {
+        "name": "Segment Any Motion (SAM 2 based)",
+        "description": "Identifies and segments moving objects in videos, handling challenges like camera shake and motion blur. Generates pixel-perfect masks for moving elements.",
+        "category": "Video Tool",
+        "subcategory": "Segmentation / Tracking",
+        "link": "https://www.google.com/search?q=https://github.com/motion-seg/motion-seg",
+        "date": "2025-04-06\\",
+        "linkText": "Segment Any Motion GitHub"
+    },
+    {
+        "name": "VACE (Preview)",
+        "description": "An all-in-one video creation and editing tool. Supports inpainting, outpainting, reference character insertion, and motion transfer. (Note: Official release covered in later video).",
+        "category": "Video Tool",
+        "subcategory": "Inpainting / Editing",
+        "link": "https://github.com/ali-vilab/VACE",
+        "date": "2025-04-06\\",
+        "linkText": "VACE GitHub"
+    },
+    {
+        "name": "LiveCC",
+        "description": "Generates real-time commentary and captions for videos (e.g., sports) by analyzing visual content and speech.",
+        "category": "Multimodal Agent",
+        "subcategory": "Video to Text/Audio",
+        "link": "https://github.com/showlab/livecc",
+        "date": "2025-04-27\\",
+        "linkText": "LiveCC GitHub"
+    },
+    {
+        "name": "Reflection Flow",
+        "description": "A plugin for the Flux image model that uses reasoning to iteratively refine and improve image generations until they match the complex prompt.",
+        "category": "Image Generator",
+        "subcategory": "Refinement / Chain of Thought",
+        "link": "https://diffusion-cot.github.io/reflection2perfection/",
+        "date": "2025-04-27\\",
+        "linkText": "Reflection Flow GitHub"
+    },
+    {
+        "name": "Uni3D (Uni3C)",
+        "description": "Generates videos with precise control over both the 3D camera trajectory and the character's body movements using reference images and motion data.",
+        "category": "Video Generator",
+        "subcategory": "Camera & Motion Control",
+        "link": "https://github.com/ewrfcas/Uni3C",
+        "date": "2025-04-27\\",
+        "linkText": "Uni3C GitHub"
+    },
+    {
+        "name": "MAGI-1 (Maggie)",
+        "description": "An autoregressive video generation model (generating chunk-by-chunk). It supports high resolution (1440p) and complex motion.",
+        "category": "Video Generator",
+        "subcategory": "Text/Image to Video",
+        "link": "https://github.com/SandAI-org/MAGI-1",
+        "date": "2025-04-27\\",
+        "linkText": "MAGI-1 GitHub"
+    },
+    {
+        "name": "SkyReels V2",
+        "description": "An upgraded video generator capable of creating long videos (up to 30 seconds or infinite length via diffusion forcing) with high realism.",
+        "category": "Video Generator",
+        "subcategory": "Long Video Generation",
+        "link": "https://github.com/SkyworkAI/SkyReels-A2",
+        "date": "2025-04-27\\",
+        "linkText": "SkyReels V2 GitHub"
+    },
+    {
+        "name": "Dia 1.6B (Diwa)",
+        "description": "A realistic text-to-speech model that can generate dialogue including non-verbal sounds like laughter, coughs, and clearing throat. Supports voice cloning.",
+        "category": "Audio Generator",
+        "subcategory": "Text to Speech",
+        "link": "https://github.com/nari-labs/dia",
+        "date": "2025-04-27\\",
+        "linkText": "Dia GitHub"
+    },
+    {
+        "name": "Animate3D (Animare 3D)",
+        "description": "Generates 3D heads and faces from text prompts, which can then be animated for lip-syncing.",
+        "category": "3D Model Generator",
+        "subcategory": "Text to 3D Head",
+        "link": "https://animate3d.github.io/",
+        "date": "2025-04-27\\",
+        "linkText": "Animate3D Project"
+    },
+    {
+        "name": "EdgeTAM (EdgeSAM)",
+        "description": "A lightweight video object segmentation and tracking model optimized to run on mobile devices (like iPhone) in real-time.",
+        "category": "Video Tool",
+        "subcategory": "Segmentation / Tracking",
+        "link": "https://github.com/facebookresearch/EdgeTAM",
+        "date": "2025-05-04\\",
+        "linkText": "EdgeTAM GitHub"
+    },
+    {
+        "name": "IC-Edit (In-Context Edit)",
+        "description": "Allows editing of images using natural language instructions (e.g., \"make him smile\", \"change background\") by leveraging in-context learning capabilities of diffusion models.",
+        "category": "Image Editor",
+        "subcategory": "Instruction-based Editing",
+        "link": "https://www.google.com/search?q=https://github.com/RiverZ/ICEdit",
+        "date": "2025-05-04\\",
+        "linkText": "IC-Edit GitHub"
+    },
+    {
+        "name": "HiDream E1",
+        "description": "An image editing model based on HiDream that modifies images based on text prompts (e.g., style transfer, object replacement) while preserving original details.",
+        "category": "Image Editor",
+        "subcategory": "Instruction-based Editing",
+        "link": "https://github.com/HiDream-ai/HiDream-E1",
+        "date": "2025-05-04\\",
+        "linkText": "HiDream-E1 GitHub"
+    },
+    {
+        "name": "Fantasy Talking",
+        "description": "Generates realistic talking head videos from a single image and audio input. Animates the entire body and background, not just lips.",
+        "category": "Video Generator",
+        "subcategory": "Lip Sync / Talking Head",
+        "link": "https://github.com/Fantasy-AMAP/fantasy-talking",
+        "date": "2025-05-04\\",
+        "linkText": "Fantasy Talking GitHub"
+    },
+    {
+        "name": "Qwen 3 (Qwen3-Omni)",
+        "description": "A family of open-source hybrid reasoning models that excel in math, coding, and reasoning tasks. Supports 119 languages.",
+        "category": "LLM",
+        "subcategory": "Reasoning Model",
+        "link": "https://github.com/QwenLM/Qwen3",
+        "date": "2025-05-04\\",
+        "linkText": "Qwen 3 GitHub"
+    },
+    {
+        "name": "Phi-4",
+        "description": "A small reasoning model (14B parameters) by Microsoft, optimized for complex problem solving on consumer devices.",
+        "category": "LLM",
+        "subcategory": "Small Language Model / Reasoning",
+        "link": "https://github.com/microsoft/Phi-3CookBook",
+        "date": "2025-05-04\\",
+        "linkText": "Phi-4 HuggingFace/GitHub"
+    },
+    {
+        "name": "MiroThinker (Web Thinker)",
+        "description": "An autonomous deep research agent that searches the web, reads pages, verifies information, and writes comprehensive research reports.",
+        "category": "Agent",
+        "subcategory": "Deep Research",
+        "link": "https://github.com/MiroMindAI/MiroThinker",
+        "date": "2025-05-04\\",
+        "linkText": "MiroThinker GitHub"
+    },
+    {
+        "name": "Alibaba Video Clothes Swapper",
+        "description": "Replaces clothing in a video with a reference garment image, maintaining lighting and texture consistency. (Likely a feature of the VACE model).",
+        "category": "Video Editor",
+        "subcategory": "Virtual Try-on",
+        "link": "https://github.com/ali-vilab/VACE",
+        "date": "2025-05-04\\",
+        "linkText": "VACE GitHub"
+    },
+    {
+        "name": "Dream-O",
+        "description": "A unified framework for image customization that creates images using reference photos of characters or objects with high prompt understanding.",
+        "category": "Image Generator",
+        "subcategory": "Reference-to-Image",
+        "link": "https://www.google.com/search?q=https://github.com/ali-vilab/Dream-O",
+        "date": "2025-05-11\\",
+        "linkText": "Dream-O GitHub"
+    },
+    {
+        "name": "HoloTime",
+        "description": "Generates 4D scenes (3D videos) from single images or text, suitable for VR/AR. Can also create panoramic videos.",
+        "category": "3D/4D Generator",
+        "subcategory": "Image to 4D",
+        "link": "https://github.com/PKU-YuanGroup/HoloTime",
+        "date": "2025-05-11\\",
+        "linkText": "HoloTime GitHub"
+    },
+    {
+        "name": "FlexiAct",
+        "description": "Transfers movements and actions from a reference video to a target image (human or animal), handling different body structures and angles.",
+        "category": "Video Generator",
+        "subcategory": "Motion Transfer",
+        "link": "https://github.com/shiyi-zh0408/FlexiAct",
+        "date": "2025-05-11\\",
+        "linkText": "FlexiAct GitHub"
+    },
+    {
+        "name": "Hunyuan Custom",
+        "description": "A video generation model that adds reference characters or objects into videos with high identity consistency. Supports multi-subject generation.",
+        "category": "Video Generator",
+        "subcategory": "Customization / Inpainting",
+        "link": "https://hunyuancustom.github.io/",
+        "date": "2025-05-11\\",
+        "linkText": "Hunyuan Custom GitHub"
+    },
+    {
+        "name": "LTX Video 13B",
+        "description": "A fast, open-source video generator capable of rendering videos in minutes. Features multiscale rendering and upscaling.",
+        "category": "Video Generator",
+        "subcategory": "Text/Image to Video",
+        "link": "https://github.com/Lightricks/LTX-Video",
+        "date": "2025-05-11\\",
+        "linkText": "LTX Video GitHub"
+    },
+    {
+        "name": "PixelHacker",
+        "description": "An inpainting tool that erases objects or fills missing parts of an image with high structural consistency.",
+        "category": "Image Editor",
+        "subcategory": "Inpainting / Object Removal",
+        "link": "https://github.com/hustvl/PixelHacker",
+        "date": "2025-05-11\\",
+        "linkText": "PixelHacker GitHub"
+    },
+    {
+        "name": "Berkeley Humanoid Light",
+        "description": "An open-source, affordable, and customizable humanoid robot design that can be 3D printed.",
+        "category": "Robotics",
+        "subcategory": "Humanoid Hardware",
+        "link": "https://www.google.com/search?q=https://github.com/BerkeleyHumanoid/BerkeleyHumanoid",
+        "date": "2025-05-11\\",
+        "linkText": "Berkeley Humanoid GitHub"
+    },
+    {
+        "name": "ZenCtrl (ZenControl)",
+        "description": "A modular control toolkit for image generation that allows background swapping, style transfer, and composition control from reference images.",
+        "category": "Image Generator",
+        "subcategory": "Control / Composition",
+        "link": "https://github.com/FotographerAI/ZenCtrl",
+        "date": "2025-05-11\\",
+        "linkText": "ZenCtrl GitHub"
+    },
+    {
+        "name": "Primitive Anything",
+        "description": "Converts complex 3D shapes into simpler \"primitive\" building blocks (spheres, cylinders) for efficient processing and manipulation.",
+        "category": "3D Tool",
+        "subcategory": "3D Segmentation / Simplification",
+        "link": "https://github.com/PrimitiveAnything/PrimitiveAnything",
+        "date": "2025-05-11\\",
+        "linkText": "PrimitiveAnything GitHub"
+    },
+    {
+        "name": "T2I-R1",
+        "description": "An image generation model that uses \"Chain of Thought\" reasoning (planning layout before details) to improve image realism and accuracy.",
+        "category": "Image Generator",
+        "subcategory": "Chain of Thought",
+        "link": "https://github.com/CaraJ7/T2I-R1",
+        "date": "2025-05-11\\",
+        "linkText": "T2I-R1 GitHub"
+    },
+    {
+        "name": "Step 1X 3D",
+        "description": "Generates high-fidelity 3D models with detailed textures from a single reference image.",
+        "category": "3D Model Generator",
+        "subcategory": "Image to 3D",
+        "link": "https://github.com/stepfun-ai/Step1X-3D",
+        "date": "2025-05-18\\",
+        "linkText": "Step 1X 3D GitHub"
+    },
+    {
+        "name": "Seed 1.5 VL",
+        "description": "A vision-language model capable of complex visual reasoning, object counting, and spatial understanding. Can act as a computer agent.",
+        "category": "Multimodal / VLM",
+        "subcategory": "Visual Reasoning",
+        "link": "https://github.com/ByteDance-Seed/Seed1.5-VL",
+        "date": "2025-05-18\\",
+        "linkText": "Seed 1.5 VL GitHub"
+    },
+    {
+        "name": "Stable Audio Open Small",
+        "description": "A lightweight text-to-audio model optimized to run on mobile devices (ARM CPUs). Generates sound effects and short music clips.",
+        "category": "Audio Generator",
+        "subcategory": "Text to Audio",
+        "link": "https://huggingface.co/stabilityai/stable-audio-open-1.0",
+        "date": "2025-05-18\\",
+        "linkText": "Stable Audio Open HuggingFace"
+    },
+    {
+        "name": "LTX Video 13B Distilled",
+        "description": "A distilled version of the LTX video model that generates videos 4-8x faster with reduced VRAM requirements (runs on 12GB).",
+        "category": "Video Generator",
+        "subcategory": "Text/Image to Video",
+        "link": "https://github.com/Lightricks/LTX-Video",
+        "date": "2025-05-18\\",
+        "linkText": "LTX Video GitHub"
+    },
+    {
+        "name": "VACE (Official Release)",
+        "description": "An all-in-one video tool for generation and editing. Supports reference-to-video, inpainting, and motion transfer. Now released with Apache 2.0 license.",
+        "category": "Video Tool",
+        "subcategory": "Editing / Generation",
+        "link": "https://github.com/ali-vilab/VACE",
+        "date": "2025-05-18\\",
+        "linkText": "VACE GitHub"
+    },
+    {
+        "name": "BLIP-3 (xGen-MM)",
+        "description": "A family of multimodal models for image understanding and generation. Supports visual question answering and image editing.",
+        "category": "Multimodal / VLM",
+        "subcategory": "Image Understanding & Generation",
+        "link": "https://www.salesforceairesearch.com/opensource/xGen-MM/index.html",
+        "date": "2025-05-18\\",
+        "linkText": "xGen-MM (BLIP-3) Project"
+    },
+    {
+        "name": "DeerFlow (Deep Flow)",
+        "description": "A community-driven, open-source deep research framework (agent) that combines LLMs with web search and crawling tools to generate reports.",
+        "category": "Agent",
+        "subcategory": "Deep Research",
+        "link": "https://github.com/bytedance/deer-flow",
+        "date": "2025-05-18\\",
+        "linkText": "DeerFlow GitHub"
+    },
+    {
+        "name": "Hunyuan Video Avatar",
+        "description": "A lip-sync generation tool that takes a single reference image and an audio clip to create a realistic talking video. It animates the entire body and background, supporting multiple characters and singing.",
+        "category": "Video Generator",
+        "subcategory": "Lip Sync / Avatar Animation",
+        "link": "https://github.com/Tencent/HunyuanVideo",
+        "date": "2025-06-01\\",
+        "linkText": "Hunyuan Video Avatar GitHub"
+    },
+    {
+        "name": "Direct3D-S2",
+        "description": "A \"gigascale\" 3D generation model that creates extremely high-resolution and detailed 3D meshes from a single image.",
+        "category": "3D Model Generator",
+        "subcategory": "Image to 3D",
+        "link": "https://www.google.com/search?q=https://github.com/Direct3D-S2/Direct3D-S2",
+        "date": "2025-06-01\\",
+        "linkText": "Direct3D-S2 GitHub"
+    },
+    {
+        "name": "Chain of Zoom",
+        "description": "An extreme image upscaler capable of magnifying images up to 256x. It uses a chain of reasoning with a vision language model to hallucinate and generate plausible details at each zoom level.",
+        "category": "Image Tool",
+        "subcategory": "Super Resolution / Upscaling",
+        "link": "https://bryanswkim.github.io/chain-of-zoom/",
+        "date": "2025-06-01\\",
+        "linkText": "Chain of Zoom GitHub"
+    },
+    {
+        "name": "DeepSeek R1-0528",
+        "description": "An updated version of the DeepSeek R1 model with improved benchmark performance and reduced hallucinations. It remains fully open-source.",
+        "category": "LLM",
+        "subcategory": "Reasoning Model",
+        "link": "https://github.com/deepseek-ai/DeepSeek-V3",
+        "date": "2025-06-01\\",
+        "linkText": "DeepSeek GitHub"
+    },
+    {
+        "name": "OmniConsistency",
+        "description": "An image editing tool specializing in style transfer (e.g., turning a photo into Lego or Clay style) while strictly maintaining the original composition and details.",
+        "category": "Image Editor",
+        "subcategory": "Style Transfer",
+        "link": "https://github.com/showlab/OmniConsistency",
+        "date": "2025-06-01\\",
+        "linkText": "OmniConsistency GitHub"
+    },
+    {
+        "name": "Phantom",
+        "description": "A video generation tool based on Wan 2.1 that allows inserting reference characters or objects into videos with high consistency.",
+        "category": "Video Generator",
+        "subcategory": "Object/Character Insertion",
+        "link": "https://github.com/Phantom-video/Phantom",
+        "date": "2025-06-01\\",
+        "linkText": "Phantom GitHub"
+    },
+    {
+        "name": "ChatterBox",
+        "description": "A small, efficient, and open-source text-to-speech model (based on Llama) that allows for high-quality voice cloning and control over intonation.",
+        "category": "Audio Generator",
+        "subcategory": "Text to Speech / Voice Cloning",
+        "link": "https://www.google.com/search?q=https://github.com/ChatterBox-TTS/ChatterBox",
+        "date": "2025-06-01\\",
+        "linkText": "ChatterBox GitHub"
+    },
+    {
+        "name": "Paper2Poster",
+        "description": "An AI agent that takes a PDF of a scientific paper and automatically designs and generates a conference-ready scientific poster, including relevant figures and text layout.",
+        "category": "Agent / Productivity",
+        "subcategory": "Document Summarization / Design",
+        "link": "https://github.com/Paper2Poster/Paper2Poster",
+        "date": "2025-06-01\\",
+        "linkText": "Paper2Poster GitHub"
+    },
+    {
+        "name": "ShapeLLM-Omni",
+        "description": "A multimodal 3D generation and understanding model. It works like a chatbot that can generate 3D models from text/images, edit them, and answer questions about 3D objects.",
+        "category": "Multimodal / 3D Tool",
+        "subcategory": "3D Generation & Understanding",
+        "link": "https://github.com/JAMESYJL/ShapeLLM-Omni",
+        "date": "2025-06-08\\",
+        "linkText": "ShapeLLM-Omni GitHub"
+    },
+    {
+        "name": "FloMo",
+        "description": "A model-agnostic video generation plugin that improves the coherence and smoothness of videos generated by models like Wan 2.1 or CogVideoX.",
+        "category": "Video Tool",
+        "subcategory": "Video Enhancement / Smoothing",
+        "link": "https://github.com/arielshaulov/FlowMo",
+        "date": "2025-06-08\\",
+        "linkText": "FloMo GitHub"
+    },
+    {
+        "name": "NaRIs (Native Resolution Image Synthesis)",
+        "description": "A diffusion transformer capable of generating images in any aspect ratio and resolution (including extreme panoramic sizes) without degradation.",
+        "category": "Image Generator",
+        "subcategory": "Multi-Aspect Ratio Generation",
+        "link": "https://github.com/NVlabs/Sana",
+        "date": "2025-06-08\\",
+        "linkText": "NaRIs GitHub"
+    },
+    {
+        "name": "ControlCrash",
+        "description": "A specialized video generator trained to simulate and predict car crashes from a single image, useful for safety analysis and autonomous driving training.",
+        "category": "Video Generator",
+        "subcategory": "Simulation / Prediction",
+        "link": "https://www.google.com/search?q=https://github.com/ControlCrash/ControlCrash",
+        "date": "2025-06-08\\",
+        "linkText": "ControlCrash GitHub"
+    },
+    {
+        "name": "Hunyuan Custom",
+        "description": "Newly released models for the Hunyuan Custom system, enabling audio-driven lip-syncing for video characters and video-driven editing/replacement.",
+        "category": "Video Generator",
+        "subcategory": "Lip Sync / Video Editing",
+        "link": "https://hunyuancustom.github.io/",
+        "date": "2025-06-08\\",
+        "linkText": "Hunyuan Custom GitHub"
+    },
+    {
+        "name": "Pixel 3DMM",
+        "description": "Generates highly accurate 3D face models from a single image, outperforming previous methods in capturing facial expressions and details.",
+        "category": "3D Model Generator",
+        "subcategory": "Face Reconstruction",
+        "link": "https://www.google.com/search?q=https://github.com/Pixel3DMM/Pixel3DMM",
+        "date": "2025-06-08\\",
+        "linkText": "Pixel 3DMM GitHub"
+    },
+    {
+        "name": "OpenAudio S1 Mini",
+        "description": "A distilled, open-source version of Fish Audio's text-to-speech model. It supports emotion and tone control via tags in the transcript.",
+        "category": "Audio Generator",
+        "subcategory": "Text to Speech",
+        "link": "https://github.com/fishaudio/fish-speech",
+        "date": "2025-06-08\\",
+        "linkText": "Fish Audio GitHub"
+    },
+    {
+        "name": "Seed-VR2",
+        "description": "A one-step video restoration model that removes noise and blur, upscaling videos to 1080p with high detail.",
+        "category": "Video Tool",
+        "subcategory": "Restoration / Upscaling",
+        "link": "https://www.google.com/search?q=https://github.com/ByteDance-Seed/Seed-VR2",
+        "date": "2025-06-15\\",
+        "linkText": "Seed-VR2 GitHub"
+    },
+    {
+        "name": "Any2Bokeh",
+        "description": "Adds professional bokeh (depth-of-field blur) effects to any video. Allows users to customize the focal plane and blur strength.",
+        "category": "Video Editor",
+        "subcategory": "Depth / Post-Processing",
+        "link": "https://www.google.com/search?q=https://github.com/Any2Bokeh/Any2Bokeh",
+        "date": "2025-06-15\\",
+        "linkText": "Any2Bokeh GitHub"
+    },
+    {
+        "name": "LayerFlow",
+        "description": "Generates videos with transparent layers (foreground/background separation) or decomposes existing videos into layers. (Code coming soon).",
+        "category": "Video Generator",
+        "subcategory": "Layered Generation",
+        "link": "https://github.com/princeton-vl/LayeredFlow",
+        "date": "2025-06-15\\",
+        "linkText": "LayerFlow GitHub"
+    },
+    {
+        "name": "PartC (Part123)",
+        "description": "Generates 3D objects from images where the object is segmented into separate, meaningful parts (e.g., furniture parts) even if hidden in the original view. (Inference scripts to be released).",
+        "category": "3D Model Generator",
+        "subcategory": "Segmented 3D Generation",
+        "link": "https://www.google.com/search?q=https://github.com/PartC-3D/PartC",
+        "date": "2025-06-15\\",
+        "linkText": "PartC GitHub"
+    },
+    {
+        "name": "TEAR (Text-Aware Image Restoration)",
+        "description": "Restores blurry or low-quality images with a specific focus on making text legible and sharp. (Dataset/Pipeline released).",
+        "category": "Image Tool",
+        "subcategory": "Restoration / Text Enhancement",
+        "link": "https://cvlab-kaist.github.io/TAIR/",
+        "date": "2025-06-22\\",
+        "linkText": "TEAR GitHub"
+    },
+    {
+        "name": "Hunyuan 3D 2.1",
+        "description": "An improved version of Tencent's 3D generation model. It generates high-quality 3D shapes and PBR textures (albido, roughness, metallic) from a single image.",
+        "category": "3D Model Generator",
+        "subcategory": "Image to 3D",
+        "link": "https://www.google.com/search?q=https://github.com/Tencent/Hunyuan3D",
+        "date": "2025-06-22\\",
+        "linkText": "Hunyuan 3D 2.1 GitHub"
+    },
+    {
+        "name": "PartTracker",
+        "description": "A tool by Nvidia that reconstructs 3D objects from single images and segments them into meaningful, movable parts (e.g., wheels on a car).",
+        "category": "3D Tool",
+        "subcategory": "Reconstruction / Segmentation",
+        "link": "https://www.google.com/search?q=https://github.com/NVIDIA/PartTracker",
+        "date": "2025-06-22\\",
+        "linkText": "PartTracker GitHub"
+    },
+    {
+        "name": "LoRA-Edit",
+        "description": "Allows editing an entire video by modifying only the first frame. Uses mask-aware LoRA fine-tuning to propagate edits while preserving the background.",
+        "category": "Video Editor",
+        "subcategory": "Video-to-Video Editing",
+        "link": "https://www.google.com/search?q=https://github.com/LoRA-Edit/LoRA-Edit",
+        "date": "2025-06-22\\",
+        "linkText": "LoRA-Edit GitHub"
+    },
+    {
+        "name": "MiniMax M1",
+        "description": "A massive open-weights language model (456B parameters) with a 1 million token context window, performing on par with top closed-source models.",
+        "category": "LLM",
+        "subcategory": "Large Language Model",
+        "link": "https://github.com/MiniMax-AI/MiniMax-M1",
+        "date": "2025-06-22\\",
+        "linkText": "MiniMax M1 GitHub"
+    },
+    {
+        "name": "ImmerseGen",
+        "description": "Generates high-quality, realistic 3D environments (VR worlds) from text prompts using a base terrain and asset population method. (Code coming soon).",
+        "category": "3D Generator",
+        "subcategory": "Environment Generation",
+        "link": "https://www.google.com/search?q=https://github.com/ImmerseGen/ImmerseGen",
+        "date": "2025-06-22\\",
+        "linkText": "ImmerseGen GitHub"
+    },
+    {
+        "name": "Polaris",
+        "description": "A post-training reinforcement learning method that significantly improves the reasoning capabilities of existing language models (even small ones).",
+        "category": "LLM Tool",
+        "subcategory": "Training / Fine-tuning",
+        "link": "https://www.google.com/search?q=https://github.com/Polaris-LLM/Polaris",
+        "date": "2025-06-22\\",
+        "linkText": "Polaris GitHub"
+    },
+    {
+        "name": "Align Your Flow",
+        "description": "A distillation method by Nvidia to create image generators that can produce high-quality images in just 1 or 2 steps. (Code coming soon).",
+        "category": "Image Generator",
+        "subcategory": "Distillation / Acceleration",
+        "link": "https://www.google.com/search?q=https://github.com/NVIDIA/AlignYourFlow",
+        "date": "2025-06-22\\",
+        "linkText": "Align Your Flow GitHub"
+    },
+    {
+        "name": "VMem (Surfel Memory of Views)",
+        "description": "A video generation mechanism that allows for consistent 3D scene generation by \"remembering\" past frames and geometry, allowing users to walk back and forth in a generated world.",
+        "category": "Video Generator",
+        "subcategory": "3D World Generation",
+        "link": "https://github.com/runjiali-rl/vmem",
+        "date": "2025-06-29\\",
+        "linkText": "VMem GitHub"
+    },
+    {
+        "name": "DRA (Dimension-Reduction Attack)",
+        "description": "Uses a video generation model to perform image editing tasks like deblurring, colorization, and inpainting by treating the image as a video frame sequence.",
+        "category": "Image Editor",
+        "subcategory": "Restoration / Editing",
+        "link": "https://www.google.com/search?q=https://github.com/DRA-Ctrl/DRA-Ctrl",
+        "date": "2025-06-29\\",
+        "linkText": "DRA GitHub"
+    },
+    {
+        "name": "AnimA-X",
+        "description": "Animates articulated 3D meshes (models with joints) using text prompts. It generates a video of the motion and extracts pose sequences to drive the model. (Code checklist released).",
+        "category": "3D Tool",
+        "subcategory": "Animation",
+        "link": "https://www.google.com/search?q=https://github.com/AnimA-X/AnimA-X",
+        "date": "2025-06-29\\",
+        "linkText": "AnimA-X GitHub"
+    },
+    {
+        "name": "Animate Any Mesh",
+        "description": "Animates any static 3D mesh (without pre-defined joints) based on text prompts. It can handle complex and abstract objects. (Code coming ASAP).",
+        "category": "3D Tool",
+        "subcategory": "Animation",
+        "link": "https://github.com/JarrentWu1031/AnimateAnyMesh",
+        "date": "2025-06-29\\",
+        "linkText": "Animate Any Mesh GitHub"
+    },
+    {
+        "name": "SongBloom",
+        "description": "An AI music generator that creates full songs (vocals + instrumentals) from lyrics and a short reference audio clip. Supports voice cloning.",
+        "category": "Audio Generator",
+        "subcategory": "Music Generation",
+        "link": "https://github.com/tencent-ailab/SongBloom",
+        "date": "2025-06-29\\",
+        "linkText": "SongBloom GitHub"
+    },
+    {
+        "name": "Hunyuan-A13B (Hunyuan Large)",
+        "description": "An efficient Mixture-of-Experts (MoE) language model with 13B active parameters (80B total) that performs on par with much larger models like DeepSeek R1 and GPT-4o.",
+        "category": "LLM",
+        "subcategory": "Mixture of Experts",
+        "link": "https://github.com/Tencent/Hunyuan-Large",
+        "date": "2025-06-29\\",
+        "linkText": "Hunyuan Large GitHub"
+    },
+    {
+        "name": "DreamCube",
+        "description": "Creates 3D panoramic scenes with depth from a single image and text prompt, useful for VR and immersive environments.",
+        "category": "3D Generator",
+        "subcategory": "Panoramic / Environment",
+        "link": "https://www.google.com/search?q=https://github.com/DreamCube-3D/DreamCube",
+        "date": "2025-06-29\\",
+        "linkText": "DreamCube GitHub"
+    },
+    {
+        "name": "LongWriter-Zero",
+        "description": "An open-source model fine-tuned from Qwen 2.5 that specializes in generating very long, coherent text (over 10,000 tokens/75k words).",
+        "category": "LLM",
+        "subcategory": "Long Context Generation",
+        "link": "https://github.com/THUDM/LongWriter",
+        "date": "2025-06-29\\",
+        "linkText": "LongWriter GitHub"
+    },
+    {
+        "name": "AlphaGenome",
+        "description": "An AI that predicts molecular properties and interprets DNA sequences (including non-coding regions) to help understand gene activity and diseases. (Model release planned).",
+        "category": "Bio-AI / Science",
+        "subcategory": "Genomics",
+        "link": "https://github.com/google-deepmind/alphagenome",
+        "date": "2025-06-29\\",
+        "linkText": "AlphaGenome Project"
+    },
+    {
+        "name": "Gemini CLI",
+        "description": "An open-source AI agent that runs in the command line/terminal to assist developers with coding, debugging, and file management.",
+        "category": "Developer Tool / Agent",
+        "subcategory": "Coding Assistant",
+        "link": "https://www.google.com/search?q=https://github.com/GoogleCloudPlatform/gemini-cli",
+        "date": "2025-06-29\\",
+        "linkText": "Gemini CLI GitHub"
+    },
+    {
+        "name": "ShareGPT4o-Image",
+        "description": "A method/plugin to reduce hallucinations in image generation models (like Stable Diffusion) by amplifying the tangential component of the generation process to steer it towards realism.",
+        "category": "Image Tool",
+        "subcategory": "Generation Quality Improvement",
+        "link": "https://www.google.com/search?q=https://github.com/tag-guidance/TAG",
+        "date": "2025-06-29\\",
+        "linkText": "https://github.com/tag-guidance/TAG"
+    }
+];
